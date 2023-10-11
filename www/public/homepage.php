@@ -10,6 +10,7 @@
 
         <?php 
 
+        session_start();
         if(isset($_SESSION['loggedIn'])){
             echo "session is the same!";
         }
