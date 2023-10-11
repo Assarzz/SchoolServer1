@@ -28,6 +28,7 @@
                     echo "found user and logg in!";
                     session_start();
                     $_SESSION["loggedIn"] = true;
+                    $_SESSION["username"] = $user["username"];
                     header("Location: homepage.php");
                     exit;
                 }

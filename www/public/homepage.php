@@ -12,7 +12,12 @@
 
         session_start();
         if(isset($_SESSION['loggedIn'])){
-            echo "session is the same!";
+
+            echo "<h1>Welcome back" . $_SESSION["username"] . "</h1>";
+            
+        }
+        else{
+            echo "<h1>how is this even possible? are you hacking?</h1>";
         }
         
         ?> 
