@@ -6,8 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Homepage!</h1>
 
-    <h1>why are you here</h1>
+        <?php 
+
+        
+        ?> 
 </body>
 </html>

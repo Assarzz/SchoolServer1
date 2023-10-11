@@ -26,6 +26,10 @@
                     # do log in stuff
                     $userFound = true;
                     echo "found user and logg in!";
+                    session_start();
+                    $_SESSION["loggedIn"] = true;
+                    header("Location: homepage.php");
+                    exit;
                 }
             }
         }
