@@ -17,8 +17,8 @@
 
         $user = array("username"=> $username, "password"=> $password);
         $userFound = false;
+        echo $userArray;
         for ($i=0; $i < count($userArray); $i++) { 
-            
             if ($userArray[$i]["username"] == $user["username"] && $userArray[$i]["password"] == $user["password"]) {
                 # found user in database
                 # do log in stuff
