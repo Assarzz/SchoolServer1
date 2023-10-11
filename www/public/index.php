@@ -9,7 +9,7 @@
 
    <h1>Logg in page!</h1>
 
-   <form action="main.php" method="post">
+   <form action="index.php" method="post">
 
       <label for="username">Username</label>
       <input type="text" name="username">
