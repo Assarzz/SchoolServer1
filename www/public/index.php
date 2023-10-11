@@ -7,9 +7,32 @@
 </head>
 <body>
 
-<h1>heassafasfasfasdfasdfasfdasfdasfasdfasfasdfasllo</h1>
+   <h1>Logg in page!</h1>
 
-<p>sdfgsdgsdfgsdfg</p>
+   <form action="index.php" method="post">
+
+      <label for="username">Username</label>
+      <input type="text" name="username">
+
+      <label for="password">Password</label>
+      <input type="password" name="password">
+
+
+      <input type="submit" value="Log in!">
+
+
+
+          <?php
+          
+         $username = $_POST["username"];
+         $password = $_POST["password"];
+
+         echo $username;
+         echo $password;
+          
+          ?> 
+
+   </form>
    
 </body>
 </html>
