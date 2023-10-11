@@ -33,8 +33,10 @@
 
         if ($userFound == false){
 
-            echo "user was not found, so it was created!";
             $userArray[] = $user;
+            file_put_contents("database.dat", serialize($userArray));
+            echo "user was not found, so it was created!";
+
         }
 
 
