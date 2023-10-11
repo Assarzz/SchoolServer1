@@ -9,7 +9,7 @@
 
    <h1>Logg in page!</h1>
 
-   <form action="index.php" method="post">
+   <form action="main.php" method="post">
 
       <label for="username">Username</label>
       <input type="text" name="username">
@@ -23,18 +23,6 @@
    </form>
    
 
-<?php
-          
-          $username = $_POST["username"];
-          $password = $_POST["password"];
- 
-          if ($username){
 
-            echo $username;
-            echo $password;
-          }
-
-           
-?> 
 </body>
 </html>
