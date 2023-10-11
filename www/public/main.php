@@ -9,7 +9,7 @@
 
 
 <?php
-        $userArray = array()
+        $userArray = array();
 
         header("Location: third.php");
   
