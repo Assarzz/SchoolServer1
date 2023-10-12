@@ -17,6 +17,11 @@
       <label for="password">Password</label>
       <input type="password" name="password">
 
+      <select name="action">
+         <option value="login">Log in</option>
+         <option value="signup">Sign up</option>
+      </select>
+
 
       <input type="submit" value="Log in!">
 

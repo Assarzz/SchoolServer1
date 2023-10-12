@@ -29,21 +29,34 @@
             return false;
         }
 
-        if ($userArray){
+        if ($_POST["action"] == "login"){
 
-            if (validUser($userArray, $user)) {
+            if ($userArray){
 
-                session_start();
-                $_SESSION["loggedIn"] = true;
-                $_SESSION["username"] = $user["username"];
-                header("Location: homepage.php");
-                exit;
+                if (validUser($userArray, $user)) {
+    
+                    session_start();
+                    $_SESSION["loggedIn"] = true;
+                    $_SESSION["username"] = $user["username"];
+                    header("Location: homepage.php");
+                    exit;
+                }
+                
             }
-            
-        }
-        else{
             header("Location: index.php");
         }
+        else if ($_POST["action"] == "signup"){
+            if (validUser($userArray, $user)) {
+                # the user alredy exists
+                header("Location: index.php");
+            }
+
+        }
+
+
+        
+        
+        
 
 ?> 
     
