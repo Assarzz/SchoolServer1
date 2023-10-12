@@ -10,6 +10,8 @@
 
         <?php 
 
+        echo "<h1>". $_GET["message"] . "</h1>";
+
         session_start();
         if(isset($_SESSION['loggedIn'])){
 
