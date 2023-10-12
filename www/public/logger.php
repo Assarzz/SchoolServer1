@@ -38,7 +38,8 @@
                     session_start();
                     $_SESSION["loggedIn"] = true;
                     $_SESSION["username"] = $user["username"];
-                    header("Location: homepage.php");
+                    $message = "Welcome back!";
+                    header("Location: homepage.php?message=" . urlencode($message));
                     exit;
                 }
                 else{
@@ -48,13 +49,25 @@
                 }
                 
             }
-            header("Location: index.php");
+            $notice = "No account with these details.";
+            header("Location: index.php?notice=" . urlencode($notice));
+            exit;
         }
         else if ($_POST["action"] == "signup"){
             if (validUser($userArray, $user)) {
                 # the user alredy exists
                 $notice = "Account with these details already exists.";
                 header("Location: index.php?notice=" . urlencode($notice));
+                exit;
+            }
+            else{
+                # the user does not exist
+                $userArray[] = $user;
+                file_put_contents("database.dat", serialize($userArray));
+                $message = "This is your first time here welcome";
+                header("Location: homepage.php?message=" . urlencode($message));
+                exit;
+
             }
 
         }
