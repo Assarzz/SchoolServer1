@@ -44,6 +44,7 @@
                 else{
                     $notice = "No account with these details.";
                     header("Location: index.php?notice=" . urlencode($notice));
+                    exit;
                 }
                 
             }
