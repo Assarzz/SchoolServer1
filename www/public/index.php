@@ -9,6 +9,16 @@
 
    <h1>Logg in page!</h1>
 
+       <?php 
+       
+         if (isset($_GET['notice'])) {
+            $notice = urldecode($_GET['notice']);
+            echo '<div class="error-message">' . $notice . '</div>';
+         }
+       
+       
+       ?> 
+
    <form action="logger.php" method="post">
 
       <label for="username">Username</label>

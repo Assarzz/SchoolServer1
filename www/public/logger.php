@@ -48,7 +48,8 @@
         else if ($_POST["action"] == "signup"){
             if (validUser($userArray, $user)) {
                 # the user alredy exists
-                header("Location: index.php");
+                $notice = "Account with these details already exists.";
+                header("Location: index.php?notice=" . urlencode($notice));
             }
 
         }
