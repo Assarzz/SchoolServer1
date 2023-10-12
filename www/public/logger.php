@@ -16,36 +16,34 @@
         $password = $_POST["password"];
 
         $user = array("username"=> $username, "password"=> $password);
-        $userFound = false;
+
+        function validUser($uA, $u){
+
+            for ($i=0; $i < count($uA); $i++) { 
+                if ($uA[$i]["username"] == $u["username"] && $uA[$i]["password"] == $u["password"]) {
+                    # found user in database
+                    # do log in stuff
+                    return true;
+                }
+            }
+            return false;
+        }
 
         if ($userArray){
 
-            for ($i=0; $i < count($userArray); $i++) { 
-                if ($userArray[$i]["username"] == $user["username"] && $userArray[$i]["password"] == $user["password"]) {
-                    # found user in database
-                    # do log in stuff
-                    $userFound = true;
-                    echo "found user and logg in!";
-                    session_start();
-                    $_SESSION["loggedIn"] = true;
-                    $_SESSION["username"] = $user["username"];
-                    header("Location: homepage.php");
-                    exit;
-                }
+            if (validUser($userArray, $user)) {
+
+                session_start();
+                $_SESSION["loggedIn"] = true;
+                $_SESSION["username"] = $user["username"];
+                header("Location: homepage.php");
+                exit;
             }
+            
         }
-
-
-        if ($userFound == false){
-
-            $userArray[] = $user;
-            file_put_contents("database.dat", serialize($userArray));
-            echo "user was not found, so it was created!";
-
+        else{
+            header("Location: index.php");
         }
-
-
-
 
 ?> 
     

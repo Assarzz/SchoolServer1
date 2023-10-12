@@ -13,7 +13,7 @@
         session_start();
         if(isset($_SESSION['loggedIn'])){
 
-            echo "<h1>Welcome back" . $_SESSION["username"] . "</h1>";
+            echo "<h1>Welcome back " . $_SESSION["username"] . "</h1>";
             
         }
         else{
