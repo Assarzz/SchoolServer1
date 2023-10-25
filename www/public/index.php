@@ -7,37 +7,10 @@
 </head>
 <body>
 
-   <h1>Logg in page!</h1>
-
-       <?php 
-       
-         if (isset($_GET['notice'])) {
-            $notice = urldecode($_GET['notice']);
-            echo '<div class="error-message">' . $notice . '</div>';
-         }
-       
-       
-       ?> 
-
-   <form action="logger.php" method="post">
-
-      <label for="username">Username</label>
-      <input type="text" name="username">
-
-      <label for="password">Password</label>
-      <input type="password" name="password">
-
-      <select name="action">
-         <option value="login">Log in</option>
-         <option value="signup">Sign up</option>
-      </select>
-
-
-      <input type="submit" value="Log in!">
-
-   </form>
+<?php     
+         
+    include("public.php");
+    ?>   
    
-
-
 </body>
 </html>
